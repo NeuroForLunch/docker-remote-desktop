@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && apt-get install \
+RUN apt-get update && apt-get install -yq \
     software-properties-common \
     curl \
     apache2-utils

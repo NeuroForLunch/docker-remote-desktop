@@ -4,7 +4,7 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt update && apt install -yq --no-install-recommends \
-    oftware-properties-common \
+    software-properties-common \
     curl \
     apache2-utils \
     && apt update \
@@ -26,7 +26,7 @@ RUN apt update && apt install -yq --no-install-recommends \
 RUN apt update \
     && apt install -y --no-install-recommends \
         xvfb \
-        x11vnc=0.9.16-1 \
+        x11vnc \
         vim-tiny \
         firefox \
         ttf-ubuntu-font-family

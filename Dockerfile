@@ -19,8 +19,6 @@ RUN apt-get update && apt-get install -yq \
         mesa-utils \
         libgl1-mesa-dri
 
-
-
 RUN apt-get update && apt-get install -yq \
         xvfb \
         x11vnc \
@@ -38,8 +36,7 @@ RUN curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_amd
 RUN apt-get update && apt-get install -yq \
   lxqt \
   openbox \
-  lxqt-themes
-  curl \
+  lxqt-themes \
   ca-certificates \
   gnupg \
   patch

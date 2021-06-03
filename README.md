@@ -3,7 +3,7 @@
 Choose a branch for the Dockerfile that suits your needs.
 
 ## LXDE
-![](lxde-1.png)
+![](https://github.com/NeuroForLunch/docker-remote-desktop/raw/main/lxde-1.png)
 
 ## LXQt
-![](lxqt-1.png)
+![](https://github.com/NeuroForLunch/docker-remote-desktop/raw/main/lxqt-1.png)

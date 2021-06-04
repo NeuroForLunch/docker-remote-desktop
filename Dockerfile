@@ -2,8 +2,7 @@ FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -yq \
-    software-properties-common \
-    curl
+    software-properties-common
 
 RUN apt-get update && apt-get install -yq \
         supervisor \
@@ -23,22 +22,16 @@ RUN apt-get update && apt-get install -yq \
         x11vnc \
         vim-tiny \
         firefox \
-        ttf-ubuntu-font-family \
         gpg-agent
 
-RUN curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-    && (dpkg -i ./google-chrome-stable_current_amd64.deb || apt-get install -fy) \
-    && curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add \
-    && rm google-chrome-stable_current_amd64.deb \
-    && rm -rf /var/lib/apt/lists/*
-
 RUN apt-get update && apt-get install -yq \
-  lxqt \
-  openbox \
-  lxqt-themes \
-  ca-certificates \
-  gnupg \
-  patch
+        lxqt \
+        openbox \
+        lxqt-themes \
+        ca-certificates \
+        gnupg \
+        patch \
+    && apt-get upgrade -y
 
 ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini-amd64 /bin/tini
 RUN chmod +x /bin/tini

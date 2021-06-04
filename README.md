@@ -1,3 +1,6 @@
 # Docker-Remote-Desktop
 
-Choose a branch for the Dockerfile that suits your needs.
+## Ubuntu 20.04 for 64-bit systems with LXQt as the desktop
+
+## LXQt
+![](https://github.com/NeuroForLunch/docker-remote-desktop/raw/main/lxqt-1.png)

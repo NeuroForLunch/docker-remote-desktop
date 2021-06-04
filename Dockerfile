@@ -46,6 +46,8 @@ ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini /bin/tini
 RUN chmod +x /bin/tini 
 
 
+COPY root /
+
 WORKDIR /root
 ENV HOME=/home/ubuntu
 ENV SHELL=/bin/bash

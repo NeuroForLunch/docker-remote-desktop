@@ -40,12 +40,9 @@ sed -i -e "s|%USER%|$USER|" -e "s|%HOME%|$HOME|" /etc/supervisor/conf.d/supervis
 # home folder
 if [ ! -x "$HOME/.config/pcmanfm-qt/lxqt/" ]; then
     mkdir -p $HOME/.config/pcmanfm-qt/lxqt/
-    chown -R $USER:$USER $HOME
 fi
 
 
-# cleanup
 PASSWORD=
-HTTP_PASSWORD=
 
 exec /bin/tini -- supervisord -n -c /etc/supervisor/supervisord.conf

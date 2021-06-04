@@ -24,8 +24,7 @@ RUN apt-get install -y \
     xvfb \
     x11vnc \
     vim-tiny \
-    firefox \
-    ttf-ubuntu-font-family
+    firefox
 
 
 RUN apt-get install -y \
@@ -34,7 +33,12 @@ RUN apt-get install -y \
         gnome-themes-standard \
         gtk2-engines-pixbuf \
         gtk2-engines-murrine \
-        arc-theme
+        arc-theme \
+        synaptic \
+     && apt-get remove -y \
+        clipit \
+        deluge \
+     && apt-get update && apt-get upgrade -y
 
 
 RUN apt-get install -y ffmpeg \
@@ -43,7 +47,7 @@ RUN apt-get install -y ffmpeg \
 
 
 ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini /bin/tini
-RUN chmod +x /bin/tini 
+RUN chmod +x /bin/tini
 
 
 COPY root /

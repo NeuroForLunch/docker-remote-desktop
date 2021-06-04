@@ -3,8 +3,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -yq \
     software-properties-common \
-    curl \
-    apache2-utils
+    curl
 
 RUN apt-get update && apt-get install -yq \
         supervisor \
@@ -45,9 +44,7 @@ ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini-amd64 /bin/ti
 RUN chmod +x /bin/tini
 
 COPY root /
-
 WORKDIR /root
-
 ENV HOME=/root
 ENV SHELL=/bin/bash
 

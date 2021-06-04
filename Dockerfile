@@ -2,10 +2,11 @@ FROM ubuntu:18.04
 
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt update \
-    && apt install -y --no-install-recommends software-properties-common curl apache2-utils \
-    && apt update \
-    && apt install -y --no-install-recommends \
+RUN apt-get update \
+    && apt-get install -y \
+        software-properties-common \
+    && apt-get update \
+    && apt-get install -y \
         supervisor \
         sudo \
         net-tools \
@@ -21,8 +22,8 @@ RUN apt update \
     && rm -rf /var/lib/apt/lists/*
 
 
-RUN apt update \
-    && apt install -y --no-install-recommends \
+RUN apt-get update \
+    && apt-get install -y \
         xvfb \
         x11vnc \
         vim-tiny \
@@ -32,7 +33,7 @@ RUN apt update \
 
 
 RUN apt update \
-    && apt install -y --no-install-recommends \
+    && apt-get install -y \
         lxqt \
         openbox \
         gtk2-engines-murrine \
@@ -43,7 +44,7 @@ RUN apt update \
 ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini-amd64 /bin/tini
 RUN chmod +x /bin/tini
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y \
   ca-certificates \
   gnupg \
   patch
